@@ -3,10 +3,10 @@ import { Facebook, Instagram, Linkedin, Mail, PhoneCall, Mail as GmailIcon, MapP
 
 const Footer = () => {
     return (
-      <footer className="bg-gradient-to-b from-dojo-500 to-dojo-700 text-white py-8">
+      <footer className="bg-gradient-to-b from-dojo-500 to-dojo-800 text-white md:pt-3 pt-1">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-between items-start">
-            <div className="w-full md:w-1/3 mb-6 md:mb-0 pr-4 flex md:justify-center">
+          <div className="flex flex-wrap justify-between items-start flex-col md:flex-row">
+            <div className="bg-black w-5/12 h-14 md:h-auto md:w-3/12 mb-6 md:mb-0 pr-4 flex md:justify-center">
               <div>
                 <a
                   href="https://www.computer.org/"
@@ -20,40 +20,48 @@ const Footer = () => {
                     alt="IEEE Computer Society Logo" 
                     width={300} 
                     height={300} 
-                    className="h-16 w-auto mb-2 transition-transform duration-300 group-hover:scale-105" 
+                    className="h-12 md:h-16 w-auto mb-2 transition-transform duration-300 group-hover:scale-105" 
                   />
                 </a>
-                <h3 className="text-lg font-semibold leading-tight">Universidad Nacional de San Agustín de Arequipa</h3>
+                <div className="collapse md:visible">
+                <h3 className="text-lg font-semibold leading-tight py-1 2xl:py-2">Universidad Nacional de San Agustín de Arequipa</h3>
                 <p className="text-sm text-dojo-100">IEEE Student Branch</p>
-              </div>
-            </div>
-            <div className="w-full md:w-1/3 mb-6 md:mb-0 flex md:justify-center">
-              <div className='md:w-3/4'>
-                <h4 className="text-xl font-bold mb-5">Contacto:</h4>
-                <div className='pt-4 mb-4'>
-                  <p className="flex items-center mb-2">
-                    <PhoneCall className="mr-2" size={18} /> +51 123 456 789
-                  </p>
-                  <p className="flex items-center mb-2">
-                    <GmailIcon className="mr-2" size={18} /> correo@aws.com
-                  </p>
-                  <p className="flex items-center">
-                    <MapPin className="mr-2" size={18} /> Arequipa, Perú
-                  </p>
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-1/3 flex md:justify-center">
-              <div className="md:w-3/4 flex flex-col items-start">
-                <h4 className="text-xl font-bold mb-6">Sobre Nosotros:</h4>
-                <p className='mb-4'>
-                  El taller "Introducción a R: De Funciones a Paquetes, de Paquetes a Papers" te enseña cómo crear funciones en R, desarrollar paquetes, y aplicar estos conocimientos en investigaciones científicas. Una oportunidad para iniciarte en el uso profesional de R.
+
+            <div className="bg-blue-950 md:w-5/12 mb-6 md:mb-0 flex md:justify-center collapse md:visible">
+              <div className="md:w-5/6 flex flex-col items-start text-center">
+                <h4 className="text-xl font-bold mb-2 w-full">Sobre Nosotros:</h4>
+                <p className='mb-2'>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut veniam, doloribus debitis non, nemo similique perspiciatis facilis accusantium sit, illo culpa explicabo amet quidem nam temporibus nesciunt earum consequuntur?
                 </p>
+                
+              </div>
+            </div>
+
+            <div className="bg-red-950 w-5/12 h-14 md:h-auto md:w-3/12 flex md:justify-center">
+              <div className='md:w-3/4 flex flex-row md:flex-col'>
+                <h4 className="text-lg md:text-xl font-bold mb-2">Contacto:</h4>
+                <div className="collapse md:visible">
+                  <div className='pt-0 mb-3'>
+                    <p className="flex items-center mb-1">
+                      <PhoneCall className="mr-2" size={18} /> +51 123 456 789
+                    </p>
+                    <p className="flex items-center mb-1">
+                      <GmailIcon className="mr-2" size={18} /> correo@aws.com
+                    </p>
+                    <p className="flex items-center">
+                      <MapPin className="mr-2" size={18} /> Arequipa, Perú
+                    </p>
+                  </div>
+                </div>
                 <SocialIEEE />
               </div>
             </div>
           </div>
-          <div className="mt-8 text-center text-sm border-t border-dojo-400 pt-4">
+
+          <div className="mt-1 md:mt-2 text-center text-sm border-t border-dojo-400 py-1 md:py-2 2xl:py-3">
             <p>@IEEE Computer Society UNSA 2024. Todos los derechos reservados.</p>
           </div>
         </div>
@@ -71,11 +79,11 @@ function SocialIEEE() {
     ];
 
     return (
-        <div className="flex space-x-4 mb-4">
+        <div className="flex space-x-2 md:space-x-3">
         {socialLinks.map(({ Icon, url }, index) => (
             <a key={index} href={url} target="_blank" rel="noopener noreferrer" 
                 className="hover:text-yellow-400 transition-colors duration-200 transform hover:scale-110">
-            <Icon size={30} />
+            <Icon size={25} />
             </a>
         ))}
         </div>
