@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className="bg-gradient-to-b from-dojo-500 to-dojo-800 text-white md:pt-3 pt-1">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-between items-start flex-col md:flex-row">
-            <div className="bg-black w-5/12 h-14 md:h-auto md:w-3/12 mb-6 md:mb-0 pr-4 flex md:justify-center">
+            <div className=" w-5/12 h-14 md:h-auto md:w-3/12 mb-6 md:mb-0 pr-4 flex md:justify-center">
               <div>
                 <a
                   href="https://www.computer.org/"
@@ -30,7 +30,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="bg-blue-950 md:w-5/12 mb-6 md:mb-0 flex md:justify-center collapse md:visible">
+            <div className=" md:w-5/12 mb-6 md:mb-0 flex md:justify-center collapse md:visible">
               <div className="md:w-5/6 flex flex-col items-start text-center">
                 <h4 className="text-xl font-bold mb-2 w-full">Sobre Nosotros:</h4>
                 <p className='mb-2'>
@@ -40,7 +40,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="bg-red-950 w-5/12 h-14 md:h-auto md:w-3/12 flex md:justify-center">
+            <div className=" w-5/12 h-14 md:h-auto md:w-3/12 flex md:justify-center">
               <div className='md:w-3/4 flex flex-row md:flex-col'>
                 <h4 className="text-lg md:text-xl font-bold mb-2">Contacto:</h4>
                 <div className="collapse md:visible">
