@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from "next/navigation";
-import Header from "@/components/header";
+import Navbar from "@/components/header/Navbar";
 import Footer from "@/components/footer";
 
 import { ReactNode } from 'react';
@@ -16,7 +16,7 @@ function LayoutWrapper({ children }: LayoutWrapperProps) {
 
   return (
     <>
-      {showHeaderFooter && <Header />}
+      {showHeaderFooter && <Navbar />}
       <main>{children}</main>
       {showHeaderFooter && <Footer />}
     </>
