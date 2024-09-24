@@ -23,9 +23,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  //antialiased bg-dojo-light text-dojo-dark
+
   return (
     <html lang="es" className={`${roboto.variable} font-sans`}>
-      <body className="antialiased bg-dojo-light text-dojo-dark">
+      <body className="">
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>

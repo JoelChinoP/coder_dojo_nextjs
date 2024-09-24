@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'dojo': {
+        dojo: {
           100: '#ffd8b3',
           200: '#ffc58d',
           300: '#ffb268',
@@ -28,8 +28,13 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-roboto)'],
       },
+      backgroundImage: {
+        "dojo-day": 'url("/dojo-day.jpg")',
+        "dojo-night": 'url("/dojo-night.jpg")',
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
