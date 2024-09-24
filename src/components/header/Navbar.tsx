@@ -5,18 +5,19 @@ import {FaInstagramSquare} from "react-icons/fa"
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import {ActiveLink} from "@/components/active-link/ActiveLink";
 
 const navigation = [
-    { name: "Nosotros", href:"otrapag", current: false },
-    { name: "Cursos", href: "otrapag", current: false},
-    { name: "Tareas",href: "otrapag", current: false}
+    { text: "Nosotros", path:"/nosotros" },
+    { text: "Cursos", path: "/cursos"},
+    { text: "Tareas",path: "/tareas"}
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Header() {
+export default function Navbar() {
 
 
     return (
@@ -36,7 +37,7 @@ export default function Header() {
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
 
                         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                            <a href="/">
+                            <Link href="/">
                             <div className="flex flex-shrink-0 items-center">
                                 {/*FALTA LOGOOOOASBBH*/}
                                 <img
@@ -44,22 +45,13 @@ export default function Header() {
                                     className="h-8 w-auto"
                                 />
                             </div>
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="hidden sm:ml-6 sm:block ">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
-                                    <a
-                                        key={item.href}
-                                        aria-current={item.current ? 'page' : undefined}
-                                        className={classNames(
-                                            item.current ? 'bg-dojo-600 text-white' : 'text-white hover:bg-dojo-300 hover:text-white',
-                                            'rounded-md px-3 py-2 text-sm font-medium',
-                                        )}
-                                    >
-                                        {item.name}
-                                    </a>
+                                    <ActiveLink key={item.text} {...item}/>
                                 ))}
 
                                 <Link
@@ -82,18 +74,13 @@ export default function Header() {
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
                     {navigation.map((item) => (
-                        <DisclosureButton
-                            key={item.name}
+                        <Link
+                            key={item.text}
                             as="a"
-                            href={item.href}
-                            aria-current={item.current ? 'page' : undefined}
-                            className={classNames(
-                                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                'block rounded-md px-3 py-2 text-base font-medium',
-                            )}
+                            href={item.path}
                         >
-                            {item.name}
-                        </DisclosureButton>
+                            {item.text}
+                        </Link>
                     ))}
                 </div>
             </DisclosurePanel>
