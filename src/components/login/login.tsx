@@ -19,9 +19,9 @@ function Login () {
     };
     return (
 
-        <div className="bg-dojo-day dark:bg-dojo-night bg-cover bg-center min-h-screen w-full flex flex-col">
-            <div className="flex justify-between items-center p-4 md:p-6">
-                <div className="w-1/4 md:w-1/6">
+        <div className="bg-dojo-day dark:bg-dojo-night bg-cover bg-center h-screen w-full flex flex-col">
+            <div className="flex justify-around items-center p-4 md:p-6">
+                <div className="hidden sm:block w-1/2 md:w-1/6">
                     <Logo path={IEEELogo} size="h-16 md:h-28"/>
                 </div>
                 <div>
@@ -35,10 +35,10 @@ function Login () {
                 </div>
             </div>
 
-            <div className="flex-grow flex flex-col md:flex-row items-center justify-center px-4 md:px-0">
-                <div className="w-full md:w-1/2 max-w-md mb-8 md:mb-0">
+            <div className="flex-grow flex flex-col md:flex-row items-center justify-center md:px-0 gap-5">
+                <div className="w-full md:w-1/2 max-w-md md:mb-0">
                     <div
-                        className="bg-white bg-opacity-70 backdrop-blur-md p-6 md:p-8 rounded-lg shadow-lg text-center">
+                        className="hidden sm:block bg-white bg-opacity-70 backdrop-blur-md md:p-8 rounded-lg shadow-lg text-center">
                         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
                             ¡Bienvenido a CoderDojo!
                         </h1>
@@ -48,16 +48,24 @@ function Login () {
                             grandes cosas juntos!
                         </p>
                     </div>
+                    <div className="flex justify-around items-center p-4 md:p-6">
+                        <div className="hidden sm:block">
+                            <DojoTypeButton onClick={handleDojoTypeButtonClick}/>
+                        </div>
+                        <div>
+                            <ThemeSwitcher/>
+                        </div>
+
+                    </div>
+
                 </div>
-                <div className="w-full md:w-1/2 max-w-md">
+                <div className="w-full md:w-1/2 max-w-md mb-5">
                     <LoginForm/>
                 </div>
+
             </div>
 
-            <div className="flex justify-between items-center p-4 md:p-6">
-                <DojoTypeButton onClick={handleDojoTypeButtonClick}/>
-                <ThemeSwitcher/>
-            </div>
+
         </div>
     )
 };
