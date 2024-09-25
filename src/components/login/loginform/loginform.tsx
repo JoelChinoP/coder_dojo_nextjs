@@ -22,7 +22,7 @@ export function LoginForm({ className }: LoginFormProps) {
 
   return (
     <div
-      className={`flex flex-col justify-center w-[470px] p-6 bg-gray-950 bg-opacity-25 backdrop-blur shadow-lg rounded-l-xl ${className}`}
+      className={`flex flex-col justify-center p-6 bg-gray-950 bg-opacity-25 backdrop-blur shadow-lg rounded-l-xl h-full ${className}`}
     >
       <div className="flex flex-col items-center">
         <h2 className="text-4xl font-bold text-white mb-2">Inicia sesión</h2>
