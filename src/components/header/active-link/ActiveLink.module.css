@@ -1,0 +1,6 @@
+.link{
+    @apply rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-dojo-300 hover:text-white;
+}
+.active-link{
+    @apply bg-dojo-600 text-white;
+}

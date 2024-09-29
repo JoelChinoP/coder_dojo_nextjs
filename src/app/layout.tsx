@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from 'next/font/google'
 import "./globals.css";
 import LayoutWrapper from "./layoutwrapper";
+import React from "react";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -18,10 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+export default function RootLayout({children,}: Readonly<{ children: React.ReactNode;
 }>) {
 
   //antialiased bg-dojo-light text-dojo-dark
