@@ -1,11 +1,10 @@
+'use client'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import {BiLogoFacebookSquare, BiLogoLinkedinSquare} from "react-icons/bi";
-import {FaInstagramSquare} from "react-icons/fa"
-import Image from "next/image";
-import React from "react";
+import React, {useState} from "react";
 import Link from "next/link";
-import {ActiveLink} from "@/components/active-link/ActiveLink";
+import {ActiveLink} from "@/components/header/active-link/ActiveLink";
+import {UserMenu} from "@/components/header/menu-profile/MenuProfile";
 
 const navigation = [
     { text: "Nosotros", path:"/nosotros" },
@@ -18,7 +17,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
-
+    const [menuOpen, setMenuOpen] = useState(false);
 
     return (
         <Disclosure as="nav" className="bg-dojo-400">
@@ -38,39 +37,35 @@ export default function Navbar() {
 
                         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                             <Link href="/">
-                            <div className="flex flex-shrink-0 items-center">
-                                {/*FALTA LOGOOOOASBBH*/}
-                                <img
-                                    src="/logo.svg"
-                                    className="h-8 w-auto"
-                                />
-                            </div>
+                                <div className="flex flex-shrink-0 items-center">
+                                    {/*FALTA LOGOOOOASBBH*/}
+                                    <img
+                                        src="/logo.svg"
+                                        className="h-8 w-auto"
+                                    />
+                                </div>
                             </Link>
-                        </div>
 
-                        <div className="hidden sm:ml-6 sm:block ">
-                            <div className="flex space-x-4">
-                                {navigation.map((item) => (
-                                    <ActiveLink key={item.text} {...item}/>
-                                ))}
 
-                                <Link
-                                    href={"/login"}
-                                    className="bg-dojo-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                            <div className="hidden sm:ml-6 sm:block ">
+                                <div className="flex space-x-4 ">
+                                    {navigation.map((item) => (
+                                        <ActiveLink key={item.text} {...item}/>
+                                    ))}
 
-                                >
-                                    Login
-                                </Link>
+                                </div>
                             </div>
-
                         </div>
+                        <UserMenu></UserMenu>
                     </div>
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <div
+                        className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     </div>
                 </div>
             </div>
 
 
+            {/*Mobile menu*/}
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
                     {navigation.map((item) => (
