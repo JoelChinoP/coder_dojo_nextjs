@@ -1,10 +1,9 @@
-'use client'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import React, {useState} from "react";
 import Link from "next/link";
 import {ActiveLink} from "@/components/header/active-link/ActiveLink";
 import {UserMenu} from "@/components/header/menu-profile/MenuProfile";
+import Image from "next/image";
 
 const navigation = [
     { text: "Nosotros", path:"/nosotros" },
@@ -12,13 +11,8 @@ const navigation = [
     { text: "Tareas",path: "/tareas"}
 ]
 
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
-}
 
 export default function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
-
     return (
         <Disclosure as="nav" className="bg-dojo-400">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -39,10 +33,12 @@ export default function Navbar() {
                             <Link href="/">
                                 <div className="flex flex-shrink-0 items-center">
                                     {/*FALTA LOGOOOOASBBH*/}
-                                    <img
+                                    <Image
+                                        width={32}
+                                        height={32}
                                         src="/logo.svg"
                                         className="h-8 w-auto"
-                                    />
+                                        alt="logo"/>
                                 </div>
                             </Link>
 
@@ -63,8 +59,6 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-
-
             {/*Mobile menu*/}
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
