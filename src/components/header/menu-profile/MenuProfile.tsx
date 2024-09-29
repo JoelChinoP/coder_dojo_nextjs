@@ -3,6 +3,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export const UserMenu = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -41,10 +42,12 @@ export const UserMenu = () => {
                 >
                     <span className="absolute -inset-1.5"></span>
                     <span className="sr-only">Open user menu</span>
-                    <img
+                    <Image
                         className="h-8 w-8 rounded-full"
-                        src="https://randomuser.me/api/portraits"
-                        alt=""
+                        src="/user.svg"
+                        alt="User"
+                        width={32}
+                        height={32}
                     />
                 </button>
             </div>
