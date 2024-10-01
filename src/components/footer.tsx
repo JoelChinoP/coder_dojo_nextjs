@@ -3,11 +3,11 @@ import { Facebook, Instagram, Linkedin, Mail, PhoneCall, Mail as GmailIcon, MapP
 
 const Footer = () => {
     return (
-      <footer className="bg-gradient-to-b from-dojo-500 to-dojo-800 text-white md:pt-3 pt-1">
-        <div className="pt-3 sm:block container mx-auto px-5">
+      <footer className="bg-gradient-to-b from-dojo-400 to-dojo-500 text-white md:pt-3 pt-1 flex justify-center w-full">
+        <div className="pt-3 sm:block mx-auto px-5 md:w-11/12 2xl:w-5/6">
           <div className="flex flex-wrap justify-between items-start flex-col md:flex-row">
-            <div className="md:h-auto md:w-4/12 mb-6 md:mb-0 pr-4 flex md:justify-center">
-              <div>
+            <div className="md:h-auto md:w-3/12 mb-2 md:mb-0 flex md:justify-end">
+              <div className="w-11/12">
                 <a
                   href="https://www.computer.org/"
                   target="_blank"
@@ -24,13 +24,13 @@ const Footer = () => {
                   />
                 </a>
                 <div className="md:visible">
-                <h3 className="text-lg font-semibold leading-tight py-1 2xl:py-2">Universidad Nacional de San Agustín de Arequipa</h3>
+                <h3 className="text-lg font-semibold leading-tight py-1 2xl:py-2 ">Universidad Nacional de San Agustín de Arequipa</h3>
                 <p className="text-sm text-dojo-100">IEEE Student Branch</p>
                 </div>
               </div>
             </div>
 
-            <div className="hidden sm:block md:w-5/12 mb-6 md:mb-0 md:justify-center md:visible">
+            <div className="hidden md:w-5/12 mb-6 md:mb-0 md:flex md:justify-center md:visible ">
               <div className="md:w-5/6 flex flex-col items-start text-center">
                 <h4 className="text-xl font-bold mb-2 w-full">Sobre Nosotros:</h4>
                 <p className='mb-2'>
@@ -40,10 +40,10 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="h-14 md:h-auto md:w-3/12 flex md:justify-center">
-              <div className='md:w-3/4 flex flex-row md:flex-col'>
+            <div className=" md:h-auto md:w-3/12 flex md:justify-center">
+              <div className='md:w-3/4 2xl:w-1/2 flex flex-row md:flex-col'>
                 <h4 className="text-lg md:text-xl font-bold mb-2">Contacto:</h4>
-                <div className="hidden sm:block md:visible">
+                <div className="hidden xl:block md:visible">
                   <div className='pt-0 mb-3'>
                     <p className="flex items-center mb-1">
                       <PhoneCall className="mr-2" size={18} /> +51 123 456 789

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
     darkMode: ["class"],
@@ -12,18 +13,18 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'dojo': {
-          100: '#ffd8b3',
-          200: '#ffc58d',
-          300: '#ffb268',
-          400: '#ff9f40',
-          500: '#ff8c00',
-          600: '#d0730d',
-          700: '#a45c12',
-          800: '#794513',
-          900: '#512f11',
-          light: '#ffecd8',
-          dark: '#2c1b0c',
+        dojo: {
+          100: '#d0dfec',
+          200: '#b9cfe2',
+          300: '#8bafce',
+          400: '#5d90ba',
+          500: '#2b71a5',
+          600: '#496487',
+          700: '#315076',
+          800: '#1a3c66',
+          900: '#002855',
+          light: '#00629b',
+          dark: '#002149',
         },
         card: {
   				DEFAULT: 'hsl(var(--card))',
@@ -68,13 +69,17 @@ const config: Config = {
         sans: ['var(--font-roboto)'],
       },
     
-      backgroundImage: {
+      backgroundImage: { 
         "dojo-day": 'url("/dojo-day.jpg")',
         "dojo-night": 'url("/dojo-night.jpg")',
+		"dojo-triangle": 'url("/large-triangles.svg")',
+		"dojo-arrowhead": 'url("/arrowhead-alternating.svg")',
+		"dojo-pattern": 'url("/pattern-randomized.svg")',
+		"dojo-zig-zag": 'url("/zig-zag.svg")',
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 };
 
 export default config;

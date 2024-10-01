@@ -17,7 +17,11 @@ function LayoutWrapper({ children }: LayoutWrapperProps) {
   return (
     <>
       {showHeaderFooter && <Navbar />}
-      <main>{children}</main>
+      <main className="bg-dojo-triangle flex justify-center md:py-6 xl:py-8">
+        <div className="py-2 md:py-0 backdrop-blur-sm xl:backdrop-blur bg-white/5 md:bg-white/40 xl:rounded-md md:w-11/12 2xl:w-5/6">
+          {children}
+        </div>
+      </main>
       {showHeaderFooter && <Footer />}
     </>
   );
