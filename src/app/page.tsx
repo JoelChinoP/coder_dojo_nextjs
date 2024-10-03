@@ -1,7 +1,7 @@
-import CursosInscritos from "@/components/misCursos";
+import HeroSection from '@/components/HeroSection/HeroSection'
 
 export default function Home() {
   return (
-    <CursosInscritos/>
+      <HeroSection />
   );
 }
